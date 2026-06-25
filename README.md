@@ -229,7 +229,20 @@ Sysmon caught process-level evidence that the Security event log alone would hav
 4. Escalate to Tier-2 if a full session was established — potential lateral movement investigation required.
 
 ---
+Repository structure
 
+rdp-brute-force-detection-lab/
+├── README.md                        ← You are here
+├── screenshots/
+│   ├── 01_lab_architecture.png      ← VirtualBox — all VMs running
+│   ├── 02_attack_setup.png          ← Hydra command + wordlist
+│   ← 03_wazuh_dashboard.png        ← Security Events dashboard
+│   ├── 04_rule_60204_raw_log.png    ← Brute force correlation alert raw log
+│   ├── 05_rule_92657_logon.png      ← Successful logon detection
+│   ├── 06_event_timeline.png        ← Chronological alert sequence
+│   └── 07_suricata_silence.png      ← Detection gap evidence
+└── evidence/
+    └── alert_timeline.txt           ← Raw grep output from ossec-alerts-23.log
 
 
 ## MITRE ATT&CK mapping
