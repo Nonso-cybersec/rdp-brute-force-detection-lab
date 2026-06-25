@@ -186,7 +186,7 @@ An attacker who only hits NLA errors walks away clean. From the SIEM's perspecti
 
 Suricata was running. Confirmed active. Generated zero alerts.
 
-![Suricata running but silent during the attack](Screenshots/07_suricata_silence.png)
+![Suricata running but silent during the attack](![](Screenshots/07_suricata_silence.png.png)
 
 RDP traffic is encrypted at the network layer. Suricata sees the packets but cannot read the credential payload inside them. Hydra's rapid connection attempts also look like normal RDP connection setup at the packet level — without a volume-based rule tuned specifically for this pattern, Suricata stays silent.
 
@@ -233,7 +233,7 @@ Repository structure
 
 rdp-brute-force-detection-lab/
 ├── README.md                        ← You are here
-├── screenshots/
+├── Screenshots/
 │   ├── 01_lab_architecture.png      ← VirtualBox — all VMs running
 │   ├── 02_attack_setup.png          ← Hydra command + wordlist
 │   ← 03_wazuh_dashboard.png        ← Security Events dashboard
