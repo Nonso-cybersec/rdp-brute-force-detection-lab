@@ -83,7 +83,7 @@ I created a 16-password wordlist on Kali with the correct Administrator password
 cat ~/rdp_wordlist.txt
 ```
 
-![Attack setup — wordlist and Hydra command](screenshots/02_attack_setup.png)
+![Attack setup — wordlist and Hydra command](Screenshots/02_attack_setup.png)
 
 ### First attack — and what went wrong
 
@@ -124,13 +124,13 @@ sudo grep -A 5 "60204" /var/ossec/logs/alerts/2026/Jun/ossec-alerts-23.log | hea
 sudo grep -A 8 "92657" /var/ossec/logs/alerts/2026/Jun/ossec-alerts-23.log | head -30
 ```
 
-![Wazuh dashboard showing attack alerts](screenshots/03_wazuh_dashboard.png)
+![Wazuh dashboard showing attack alerts](Screenshots/03_wazuh_dashboard.png)
 
-![Rule 60204 — brute force correlation alert](screenshots/04_rule_60204_raw_log.png)
+![Rule 60204 — brute force correlation alert](Screenshots/04_rule_60204_raw_log.png)
 
-![Rule 92657 — successful logon detection](screenshots/05_rule_92657_logon.png)
+![Rule 92657 — successful logon detection](Screenshots/05_rule_92657_logon.png)
 
-![Event timeline — chronological alert sequence](screenshots/06_event_timeline.png)
+![Event timeline — chronological alert sequence](Screenshots/06_event_timeline.png)
 
 ---
 
@@ -186,7 +186,7 @@ An attacker who only hits NLA errors walks away clean. From the SIEM's perspecti
 
 Suricata was running. Confirmed active. Generated zero alerts.
 
-![Suricata running but silent during the attack](screenshots/07_suricata_silence.png)
+![Suricata running but silent during the attack](Screenshots/07_suricata_silence.png)
 
 RDP traffic is encrypted at the network layer. Suricata sees the packets but cannot read the credential payload inside them. Hydra's rapid connection attempts also look like normal RDP connection setup at the packet level — without a volume-based rule tuned specifically for this pattern, Suricata stays silent.
 
