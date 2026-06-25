@@ -5,6 +5,7 @@
 **Time to Credential Compromise:** 4 seconds  
 **Outcome:** Detected ✅ | Credential compromised ✅ | Detection gap found ✅
 
+![Lab Architecture](Screenshots/01_lab_architecture.png)
 ---
 
 ## Why I built this
@@ -83,7 +84,7 @@ I created a 16-password wordlist on Kali with the correct Administrator password
 cat ~/rdp_wordlist.txt
 ```
 
-![Attack setup — wordlist and Hydra command](Screenshots/02_attack_setup.png)
+![Attack Setup](Screenshots/02_attack_setup.jpg)
 
 ### First attack — and what went wrong
 
@@ -124,13 +125,20 @@ sudo grep -A 5 "60204" /var/ossec/logs/alerts/2026/Jun/ossec-alerts-23.log | hea
 sudo grep -A 8 "92657" /var/ossec/logs/alerts/2026/Jun/ossec-alerts-23.log | head -30
 ```
 
-![Wazuh dashboard showing attack alerts](Screenshots/03_wazuh_dashboard.png)
+![Wazuh dashboard showing attack alerts](Screenshots/03_wazuh_dashboard.jpg)
 
-![Rule 60204 — brute force correlation alert](Screenshots/04_rule_60204_raw_log.png)
+![Rule 60204 — brute force correlation alert](Screenshots/04_rule_60204_raw_log.jpg)
 
-![Rule 92657 — successful logon detection](Screenshots/05_rule_92657_logon.png)
+![Rule 92657 — successful logon detection](Screenshots/05_rule_92657_logon.jpg)
 
-![Event timeline — chronological alert sequence](Screenshots/06_event_timeline.png)
+![Event timeline — chronological alert sequence](Screenshots/06_event_timeline.jpg)
+
+
+
+
+
+
+
 
 ---
 
