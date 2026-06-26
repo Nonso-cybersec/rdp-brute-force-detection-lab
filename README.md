@@ -254,6 +254,7 @@ rdp-brute-force-detection-lab/
 
 ## MITRE ATT&CK mapping
 
+
 | Technique | ID | What was observed |
 |---|---|---|
 | Brute Force: Password Guessing | T1110.001 | 16-entry wordlist against RDP port 3389 |
