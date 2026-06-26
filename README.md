@@ -1,9 +1,8 @@
 # RDP Brute Force Detection Lab
 
 **MITRE ATT&CK:** T1110.001 — Brute Force: Password Guessing  
-**Detection Severity:** Level 10 — Critical  
 **Time to Credential Compromise:** 4 seconds  
-**Outcome:** Detected ✅ | Credential compromised ✅ | Detection gap found ✅
+**Outcome:** Controlled Compromise & Detection Gap Analysis
 
 ![Lab Architecture](Screenshots/01_lab_architecture.png)
 ---
@@ -194,7 +193,7 @@ An attacker who only hits NLA errors walks away clean. From the SIEM's perspecti
 
 Suricata was running. Confirmed active. Generated zero alerts.
 
-![Suricata running but silent during the attack](![](Screenshots/07_suricata_silence.png.png)
+![Suricata running but silent during the attack](Screenshots/07_suricata_silence.png.png)
 
 RDP traffic is encrypted at the network layer. Suricata sees the packets but cannot read the credential payload inside them. Hydra's rapid connection attempts also look like normal RDP connection setup at the packet level — without a volume-based rule tuned specifically for this pattern, Suricata stays silent.
 
@@ -237,21 +236,21 @@ Sysmon caught process-level evidence that the Security event log alone would hav
 4. Escalate to Tier-2 if a full session was established — potential lateral movement investigation required.
 
 ---
-Repository structure
+### Repository Structure
 
+```text
 rdp-brute-force-detection-lab/
-├── README.md                        ← You are here
+├── README.md
 ├── Screenshots/
-│   ├── 01_lab_architecture.png      ← VirtualBox — all VMs running
-│   ├── 02_attack_setup.png          ← Hydra command + wordlist
-│   ← 03_wazuh_dashboard.png        ← Security Events dashboard
-│   ├── 04_rule_60204_raw_log.png    ← Brute force correlation alert raw log
-│   ├── 05_rule_92657_logon.png      ← Successful logon detection
-│   ├── 06_event_timeline.png        ← Chronological alert sequence
-│   └── 07_suricata_silence.png      ← Detection gap evidence
+│   ├── 01_lab_architecture.png
+│   ├── 02_attack_setup.jpg
+│   ├── 03_wazuh_dashboard.jpg
+│   ├── 04_rule_60204_raw_log.jpg
+│   ├── 05_rule_92657_logon.jpg
+│   ├── 06_event_timeline.jpg
+│   └── 07_suricata_silence.png.png
 └── evidence/
-    └── alert_timeline.txt           ← Raw grep output from ossec-alerts-23.log
-
+    └── alert_timeline.txt
 
 ## MITRE ATT&CK mapping
 
