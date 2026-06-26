@@ -251,9 +251,9 @@ rdp-brute-force-detection-lab/
 │   └── 07_suricata_silence.png.png
 └── evidence/
     └── alert_timeline.txt
+```
 
 ## MITRE ATT&CK mapping
-
 
 | Technique | ID | What was observed |
 |---|---|---|
